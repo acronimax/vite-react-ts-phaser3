@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import Phaser from 'phaser';
 import GameScene from './scenes/gameScene';
 import ScoreScene from './scenes/scoreScene';
@@ -9,13 +9,13 @@ type GameEngineProps = {
   height: number;
 };
 
-const GameEngine: FC<GameEngineProps> = ({ height, width }) => {
+function GameEngine({ height, width }: GameEngineProps) {
   useEffect(() => {
     const phaser = new Phaser.Game({
       width,
       height,
       type: Phaser.AUTO,
-      backgroundColor: '#000033',
+      backgroundColor: '#000',
       title: 'Starfall',
       physics: {
         default: 'arcade',
@@ -36,5 +36,5 @@ const GameEngine: FC<GameEngineProps> = ({ height, width }) => {
   }, [height, width]);
 
   return <div id="phaser-game" />;
-};
+}
 export default GameEngine;
