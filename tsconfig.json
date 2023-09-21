@@ -19,7 +19,8 @@
   "include": [
     ".eslintrc.cjs",
     "vite.config.ts",
-    "src",
+    "src"
   ],
+  "exclude": ["coverage"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

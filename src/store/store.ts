@@ -1,8 +1,5 @@
-import {
-  configureStore,
-  combineReducers,
-  PreloadedState,
-} from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { type PreloadedState } from '@reduxjs/toolkit';
 import gameReducer from '../feature/gameSlice';
 
 export const rootReducer = combineReducers({

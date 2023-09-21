@@ -4,16 +4,21 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
+    'standard-with-typescript',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:testing-library/react',
     'plugin:prettier/recommended',
   ],
-  parser: '@typescript-eslint/parser',
-  ignorePatterns: ['dist'],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -23,16 +28,11 @@ module.exports = {
     'react',
     'prettier',
     'react-refresh',
-    '@typescript-eslint',
     'testing-library',
     'jest-dom',
   ],
   rules: {
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/ban-ts-comment': 0,
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
   },
 };

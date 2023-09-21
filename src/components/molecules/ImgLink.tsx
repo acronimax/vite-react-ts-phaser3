@@ -1,17 +1,8 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, FC, PropsWithChildren } from 'react';
 
-type PropsWithChildren<P> = P & { children: ReactNode };
-
-function ImgLink({
-  children,
-  href,
-  rel,
-  target,
-}: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>) {
-  return (
-    <a href={href} rel={rel} target={target}>
-      {children}
-    </a>
-  );
-}
+const ImgLink: FC<
+  PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>
+> = (props) => {
+  return <a {...props}>{props.children}</a>;
+};
 export default ImgLink;

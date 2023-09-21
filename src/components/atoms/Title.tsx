@@ -1,8 +1,9 @@
-type TitleProps = {
+import type { FC, HTMLAttributes } from 'react';
+interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
   text: string;
-};
-
-function Title({ text }: TitleProps) {
-  return <h1>{text}</h1>;
 }
+
+const Title: FC<TitleProps> = (props) => {
+  return <h1 {...props}>{props.text}</h1>;
+};
 export default Title;

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import reducer, { Game, updateScore } from '../gameSlice';
+import reducer, { updateScore } from '../gameSlice';
+import type { Game } from '../gameSlice';
 
 describe('features/gameSlice', () => {
   const mockInitialState: Game = {

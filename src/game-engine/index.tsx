@@ -1,15 +1,16 @@
 import { useEffect } from 'react';
+import type { FC } from 'react';
 import Phaser from 'phaser';
 import GameScene from './scenes/gameScene';
 import ScoreScene from './scenes/scoreScene';
 import WelcomeScene from './scenes/welcomeScene';
 
-type GameEngineProps = {
+interface GameEngineProps {
   width: number;
   height: number;
-};
+}
 
-function GameEngine({ height, width }: GameEngineProps) {
+const GameEngine: FC<GameEngineProps> = ({ height, width }) => {
   useEffect(() => {
     const phaser = new Phaser.Game({
       width,
@@ -32,9 +33,11 @@ function GameEngine({ height, width }: GameEngineProps) {
       },
       scene: [WelcomeScene, GameScene, ScoreScene],
     });
-    return () => phaser.destroy(true);
+    return () => {
+      phaser.destroy(true);
+    };
   }, [height, width]);
 
   return <div id="phaser-game" />;
-}
+};
 export default GameEngine;
