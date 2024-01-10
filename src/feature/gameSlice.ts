@@ -15,12 +15,10 @@ const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
-    updateScore: (state: Game, action: PayloadAction<number>) => {
-      return {
-        ...state,
-        score: action.payload,
-      };
-    },
+    updateScore: (state: Game, action: PayloadAction<number>) => ({
+      ...state,
+      score: action.payload,
+    }),
   },
 });
 

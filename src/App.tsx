@@ -15,8 +15,8 @@ const App: FC = () => {
       </div>
       <div id="game-container">
         <GameEngine
-          width={window.innerWidth / 2}
-          height={window.innerWidth / 3}
+          width={window.innerWidth * 0.9}
+          height={window.innerWidth / 2}
         />
       </div>
     </>
