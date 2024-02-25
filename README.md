@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Phaser
 
 This template provides a minimal setup to get React working with Phaser in Vite with HMR and some ESLint rules.
 
